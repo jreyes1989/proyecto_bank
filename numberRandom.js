@@ -1,18 +1,11 @@
 const accountNumberRandom = () => {
-  const date = new Date();
-  const now =
-    date.getSeconds().toString() +
-    date.getDate().toString() +
-    date.getDay().toString() +
-    date.getFullYear().toString() +
-    date.getHours().toString() +
-    date.getFullYear().toString();
+  let accountN = [];
 
-  const randomNumber = Math.floor(
-    Math.random() * (999 - 111 + 1) + 111
-  ).toString();
+  for (let i = 0; i < 10; i++) {
+    accountN.push(Math.floor(Math.random() * 10));
+  }
 
-  return +(now + randomNumber);
+  return Number(accountN.join(''));
 };
 
 module.exports = accountNumberRandom;
